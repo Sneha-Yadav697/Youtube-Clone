@@ -60,11 +60,11 @@ console.log("category "+ category);
 
 
   return (
-    <div className={` ${open == false?" w-[95%]": " w-[85%]" } w-[85%]  h-[40rem] overflow-y-scroll` }>
+    <div className={` w-[100%] h-[90vh] ${open == false?" w-[95%]": " w-[85%]" } w-[85%]  overflow-y-scroll` }>
 
     <div className={` flex   w-[100%]  mt-3  ${open == false?" gap-[2rem]": " gap-[2rem]" } `}>
-      <div className="ml-5 w-[70%]">
-      <iframe className="rounded-2xl"
+      <div className="ml-5 w-[95%] h-fit   ">
+      <iframe className="rounded-2xl  "
         width={` ${open == false?" 100%": " 100%" }`}
         height="500"
         src={`https://www.youtube.com/embed/${videoid}?&autoplay=1`}
@@ -74,25 +74,26 @@ console.log("category "+ category);
         
       </iframe>
 
-      <h1 className="font-bold text-xl my-2 ml-2">{singleVideo?.snippet?.localized?.title } title here</h1>
-      <div className='flex items-center justify-between align-middle'>
-                        <div className='flex items-center justify-between w-[30%]'>
-                            <div className='flex'>
-                            <img className=" w-9 rounded-full " src={url} alt="img" />
-                                <h1 className='font-bold ml-2'>{singleVideo?.snippet?.channelTitle}</h1>
-                            </div>
-                            <button className='px-4 py-2 font-medium bg-black text-white rounded-full'>Subscribe</button>
+      <h1 className="font-bold text-[xl]  my-2 ml-2">{singleVideo?.snippet?.localized?.title }</h1>
+      <div className='flex items-center gap-[4%] md:gap-[10%] justify-between w-[95%] '>
+                        <div className='flex items-center gap-[2%] w-[50%] '>
+                      
+                            <img className=" w-[10%] ml-5 h-[10%] rounded-full " src={url} alt="img" />
+                     
+                            <h1 className='text-sm md:text-xl ml-2 font-medium   '>{singleVideo?.snippet?.channelTitle}</h1>
+                            <button className='px-[4%] py-[2%]  text-[80%] bg-gray-700 text-white rounded-full'>Subscribe</button>
                         </div>
-                        <div className='flex items-center w-[40%] justify-between mt-2'>
-                            <div className={`flex items-center cursor-pointer  ${theme && " bg-gray-600"   } bg-gray-200 px-4 py-2 rounded-full`}>
-                                <AiOutlineLike size="20px" className='mr-5' />
-                                <AiOutlineDislike size="20px" />
+
+                        <div className={`flex items-center  justify-between mt-2`} >
+                            <div className={`flex items-center cursor-pointer  ${theme && " bg-gray-600"   } bg-gray-200 p-[4%] rounded-full`}>
+                                <AiOutlineLike size="15px" className='mr-5   ' />
+                                <AiOutlineDislike size="15px " />
                             </div>
-                            <div className={`flex items-center cursor-pointer ${theme && " bg-gray-600"   } bg-gray-200 px-4 py-2 rounded-full`}>
-                                <PiShareFatLight size="20px" className='mr-2' />
+                            <div className={`flex items-center text-sm cursor-pointer ${theme && " bg-gray-600"   } bg-gray-200 px-[3%] py-[2%] rounded-full`}>
+                                <PiShareFatLight size="10px" className='mr-2' />
                                 <span>Share</span>
                             </div>
-                            <div className={`flex items-center cursor-pointer ${theme && " bg-gray-600"   } bg-gray-200 px-4 py-2 rounded-full`}>
+                            <div className={`flex text-sm items-center cursor-pointer ${theme && " bg-gray-600"   } bg-gray-200 px-[3%] py-[2%] rounded-full`}>
                                 <GoDownload />
                                 <span>Download</span>
                             </div>
@@ -103,11 +104,11 @@ console.log("category "+ category);
       </div>
                     </div>
 
-     
+<div className="w-[30%] sm:w-[0] md:w-[0] lg:w-[30%]  " >  
 {
    ( category === "Live"?
 
-                    <div className={` w-[25%] border-2 border-gray-200 rounded-lg h-fit py-3 px-2`}>
+                    <div className={`  lg:bg-slate-600 border-2 border-gray-200 rounded-lg h-fit py-3 px-2`}>
                     <div className='flex justify-between items-center border-b-2 '>
                         <h1>Top Chat</h1>
                         <hr/>
@@ -130,6 +131,7 @@ console.log("category "+ category);
                     </div>
                     </div>:<SuggestedVideo />)
 }
+</div>   
 
       </div>
      

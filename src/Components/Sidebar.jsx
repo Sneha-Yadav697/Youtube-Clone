@@ -135,14 +135,14 @@ dispatch(setTheme(!theme))
 
 
   return (
- <div className={` fixed relative  z-10 left-0 ${open?" sm:w-[25%] md:w-[38%] xl:w-[15%] 2xl:w-[15%]" : " sm:w-[30%] md:w-[5%] xl:w-[7%]  2xl:w-[5%]"}  overflow-y-scroll overflow-x-hidden ml-3 my-3 h-[86vh] `}>
-  <button className={` btn bg-gray-600 text-white p-1 rounded-2xl px-2 ${theme && " text-[black]"}`}  onClick={ThemeMode}>{mode}</button>
-            {
+ <div className={`fixed relative  z-10 m-1 ${open?" sm:w-[30%] md:w-[21%] lg:w-[20%] xl:w-[15%] 2xl:w-[15%]" : " sm:w-[0] md:w-[0] lg:w-[10%] xl:w-[5%]  2xl:w-[5%]"  }  overflow-y-scroll overflow-x-hidden  my-3 h-[90vh] `}>
+  <button className={` my-3 btn bg-gray-600 text-white p-1 rounded-2xl px-2 ${theme && " text-[black]"}`}  onClick={ThemeMode}>{mode}</button>
+            {   
                 sidebarItem.map((item, index) => {
                     return (
-                        <div key={index} className='flex my-3 ml-2' >
+                        <div key={index} className='flex my-3  text-[11px] ' >
                             {item.icons}
-                            <p className={`ml-5 ${open ? "": 'hidden'}`}>{item.title}</p>
+                            <p className={`ml-1 text-[11px] sm:text-[15px] ${open ? "": 'hidden'}` }>{item.title}</p>
                         </div>
                     )
                 })

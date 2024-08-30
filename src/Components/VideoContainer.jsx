@@ -12,7 +12,7 @@ import Loading from "./Loading";
 
 const VideoContainer = () => {
   const { video ,category} = useSelector((store) => store.app);
-
+  const open = useSelector((store)=>store.app.open)
 
   const [page, setPage] = useState(50);
   const [arrVideo , setArrVideo] = useState([])
@@ -71,17 +71,22 @@ const fetchMoreData = ()=>{
      }
   }, [category]);
 
- 
+  // ${
+  //   open === false
+  //     ? " grid-cols-3 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 "
+  //     : " grid-cols-3 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+  // }
 
  
   return arrVideo.length === 0? <Shimmer/> : (
     
     <div
-          className={` ${
-            open === false
-              ? " grid-cols-3 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 "
-              : " grid-cols-3 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
-          } w-full m-auto  grid h-[34rem] overflow-y-scroll no-scrollbar`}
+          className={`  grid-cols-1 mx-auto ml-[5%] md:ml-[0] w-full  grid h-[80vh] overflow-y-scroll no-scrollbar
+            ${
+                open === false
+                  ? " sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
+                   : "sm:grid-cols-2  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
+               }`}
         >
         {arrVideo &&
           arrVideo.map((item) => {

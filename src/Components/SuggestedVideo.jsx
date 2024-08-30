@@ -36,7 +36,7 @@ setApidata(res.data.items)
 
 
   return (
-    <div className=' w-[25%]  border-2 border-gray-200 rounded-lg h-fit py-3 px-2 '>
+    <div className=' w-[100%]  border-2 border-gray-200 rounded-lg h-fit py-3 px-2 '>
     {apiData.map((items, index)=>{
         return( 
 

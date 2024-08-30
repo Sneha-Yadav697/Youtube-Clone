@@ -56,7 +56,7 @@ const searchInput = ()=>{
 
 
   return (
-    <div className={`py-[1%] px-[2%] w-[43rem] sm:w-[100%]  justify-center align-middle items-center shadow-xl`}>
+    <div className={`py-[1%] px-[2%]  m-auto w-fit sm:w-[100%]  justify-center align-middle items-center shadow-xl`}>
       <div className="flex   w-[100%] items-center  ">
         <div className="grid grid-cols-1 w-[25%] gap-3 ml-2 ">
         <div className="flex items-center ">
@@ -73,8 +73,8 @@ const searchInput = ()=>{
       
           </div>
         </div>
-        <div className="grid-cols-10 w-[48%] ">
-          <div className="flex ">
+        <div className="grid-cols-10 w-[48%]  ">
+          <div className="flex items-center  ">
             <input
               onFocus={() => setSuggestion(true)}
               onBlur={() => setSuggestion(false)}
@@ -82,15 +82,15 @@ const searchInput = ()=>{
               onChange={(e) => setInput(e.target.value)}
               type="text"
               placeholder="Search"
-              className={` ${theme && 'bg-black text-white'} w-[80%] px-[2%] py-[1%]   border border-gray-400 rounded-l-full outline-none bg-none`}
+              className={` ${theme && 'bg-black text-white'}  w-[60%] h-[15%] px-[2%] ml-2 py-[0] sm:h-[50%] md:py-[2%] xl:w-[80%]  border border-gray-400 rounded-l-full outline-none bg-none`}
               
             />
 
           
                <Link to={`/results?search_query=${input}`}><button 
                onClick={searchInput}
-                className={` ${theme && 'bg-gray-800 text-white'} py-[12.5%] border border-gray-400 rounded-r-full px-4`} >
-                <CiSearch size="24px" />
+                className={` ${theme && 'bg-gray-800 text-white'} text-sm py-1 px-4 md:py-[10%] lg:py-[12%] xl:py-[19%] md:text-2xl border mr-2 border-gray-400 rounded-r-full `} >
+                <CiSearch  />
               </button></Link>
           </div>
 
