@@ -2,9 +2,9 @@ import { useSelector } from "react-redux"
 
 
 const VideoCard = ({item}) => {
-const {category} = useSelector((store)=>store.app)
+
 const {theme} = useSelector((store) => store.app)
-const open = useSelector((store)=>store.app.open)
+
 
 const {channelTitle} = item?.snippet ||{};
 const {title} = item?.snippet ||{};

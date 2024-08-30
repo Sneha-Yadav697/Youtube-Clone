@@ -1,21 +1,18 @@
 import { useEffect, useState } from "react";
-import { YOUTUBE_VIDEO_API, GOOGLE_API_KEY } from "../Constants/youtube";
+import {  GOOGLE_API_KEY } from "../Constants/youtube";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setHomeVideo, setVideobyCategory } from "../utils/appSlice";
-import { RiH1 } from "react-icons/ri";
+import { setHomeVideo} from "../utils/appSlice";
 import Shimmer from "./Shimmer";
 import axios from "axios";
-import ButtonList from "./ButtonList";
-import { addListener } from "@reduxjs/toolkit";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Loading from "./Loading";
-import Error from "./Error";
+
 
 const VideoContainer = () => {
   const { video ,category} = useSelector((store) => store.app);
-  const {homepage} = useSelector((store)=>store.app)
+
 
   const [page, setPage] = useState(50);
   const [arrVideo , setArrVideo] = useState([])

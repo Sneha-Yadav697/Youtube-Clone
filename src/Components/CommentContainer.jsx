@@ -1,8 +1,8 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { GOOGLE_API_KEY } from '../Constants/youtube'
 import {  useSearchParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+
 
 
 
@@ -11,7 +11,7 @@ const CommentsContainer = () => {
     const [searchparams] = useSearchParams()
     const videoid = searchparams.get('v');
     const [ data , setData] = useState([])
-    const {theme} = useSelector((store) => store.app)
+   
     
 
 const fetchComment = async() =>{
@@ -35,7 +35,7 @@ const fetchComment = async() =>{
     
 
     const Comment = ({data})=>{
-   const {topLevelComment}  = data.snippet ||{}
+   const {topLevelComment}  = data?.snippet ||{}
       
         
     return(
@@ -54,8 +54,8 @@ const CommentsList = ({comment})=>{
    
     
     return comment.map((comment,index)=> (
-        <div>
-    <Comment key={index} data={comment}/>
+        <div key={index}>
+    <Comment  data={comment}/>
     <div className='pl-5 border-l-4'>
     
     </div>

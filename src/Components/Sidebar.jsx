@@ -9,7 +9,6 @@ import { AiOutlineHistory } from "react-icons/ai";
 import { PiPlaylistDuotone } from "react-icons/pi";
 import { LiaVideoSolid } from "react-icons/lia";
 import { MdOutlineWatchLater } from "react-icons/md";
-import { AiOutlineLike } from "react-icons/ai";
 import { TfiShoppingCart } from "react-icons/tfi";
 
 import { SlFire } from "react-icons/sl";

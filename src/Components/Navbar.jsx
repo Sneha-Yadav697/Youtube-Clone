@@ -6,21 +6,15 @@ import { IoLogoYoutube } from "react-icons/io";
 
 import { CiSearch } from "react-icons/ci";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  toggleSidebar,
-  setCategory,
-  setSearchSuggestion,
-  setHomeVideo,
-  setHomePage,
-} from "../utils/appSlice";
+import { toggleSidebar,setSearchSuggestion,} from "../utils/appSlice";
 import { useState } from "react";
 
 
 import axios from "axios";
 import { SEARCH_suggestion_api } from "../Constants/youtube";
-import { Link, useSearchParams } from "react-router-dom";
-import SearchPage from "./SearchPage";
-import VideoContainer from "./VideoContainer";
+import { Link } from "react-router-dom";
+
+
 
 
 const Navbar = () => {
@@ -29,16 +23,6 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const { searchSuggestion } = useSelector((store) => store.app);
 const {theme} = useSelector((store)=>store.app)
-const{param} = useSearchParams();
-
-
-
-  const searchVideo = () => {
-    dispatch(setCategory(input));
-    setInput("");
- };
-
-
 
   const ToggleHandler = () => {
     dispatch(toggleSidebar());
