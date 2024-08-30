@@ -5,7 +5,7 @@ import Feed from './Components/Feed'
 import Navbar from './Components/Navbar'
 
 import Body from './Components/Body'
-import Watch from './Components/watch'
+import Watch from './Components/Watch'
 import SearchPage from './Components/SearchPage'
 import { useState } from 'react'
 import { useSelector } from 'react-redux'
