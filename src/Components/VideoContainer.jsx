@@ -71,11 +71,6 @@ const fetchMoreData = ()=>{
      }
   }, [category]);
 
-  // ${
-  //   open === false
-  //     ? " grid-cols-3 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 "
-  //     : " grid-cols-3 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
-  // }
 
  
   return arrVideo.length === 0? <Shimmer/> : (
